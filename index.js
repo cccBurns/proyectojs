@@ -33,17 +33,22 @@ productos.forEach((product) => {
 });
 
 verCarrito.addEventListener("click", () => {
-    
+    modalContainer.innerHTML = "";
+    modalContainer.style.display = "flex";
     const modalHeader = document.createElement("div");
-    modalHeader.classname = "modal-header"
+    modalHeader.className = "modal-header";
     modalHeader.innerHTML = `
-    <h1 class="modal-header-title">Carrito.</h1>`;
-
+    <h1 class="modal-header-title">Carrito.</h1>
+    `;
     modalContainer.append(modalHeader);
 
     const modalbutton = document.createElement("h1");
-    modalbutton.innerText = "X";
+    modalbutton.innerText = "x";
     modalbutton.className = "modal-header-button";
+
+    modalbutton.addEventListener("click", () => {
+        modalContainer.style.display = "none";
+    });
 
     modalHeader.append(modalbutton);
 
@@ -51,10 +56,10 @@ verCarrito.addEventListener("click", () => {
         let carritoContent = document.createElement("div");
         carritoContent.className = "modal-content";
         carritoContent.innerHTML = `
-        <img src="${product.img}">
-        <h3>${product.nombre}</h3>
-        <p>${product.precio} $</p>
-        `;
+            <img src="${product.img}">
+            <h3>${product.nombre}</h3>
+            <p>${product.precio} $</p>
+            `;
 
         modalContainer.append(carritoContent);
     });
@@ -65,7 +70,7 @@ verCarrito.addEventListener("click", () => {
     totalBuying.className = "total-content";
     totalBuying.innerHTML = `total a pagar: ${total} $`;
     modalContainer.append(totalBuying);
-
+    
 });
 
 

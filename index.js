@@ -1,3 +1,4 @@
+
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
@@ -16,10 +17,10 @@ productos.forEach((product) => {
     shopContent.append(content);
 
     let comprar = document.createElement("button");
-    comprar.innerText = "comprar";
-    comprar.className = "comprar";
+  comprar.innerText = "comprar";
+  comprar.className = "comprar";
 
-    content.append(comprar);
+  content.append(comprar);
 
     comprar.addEventListener("click", () => {
         carrito.push({

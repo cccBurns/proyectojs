@@ -1,4 +1,6 @@
 
+// LISTA DE PRODUCTOS
+
 const productos = [
     
     {   id: 1,

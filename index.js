@@ -5,6 +5,8 @@ const modalContainer = document.getElementById("modal-container");
 
 let carrito = [];
 
+//RECORRIDO DEL PRODUCTO
+
 productos.forEach((product) => {
     let content = document.createElement("div");
     content.className = "card";
@@ -15,6 +17,8 @@ productos.forEach((product) => {
           `;
 
     shopContent.append(content);
+
+    // BOTON COMPRAR
 
     let comprar = document.createElement("button");
   comprar.innerText = "comprar";

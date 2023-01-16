@@ -28,7 +28,19 @@
                 `;
 
             modalContainer.append(carritoContent);
+
+// BOTON ELEMINR PRODUCTOS
+
+            let eliminar = document.createElement("span");
+            eliminar.innerText = "❌";
+            eliminar.className = "delete-product";
+            carritoContent.append(eliminar);
+
+            eliminar.addEventListener("click", eliminarProducto);
+
         });
+
+
 
         const total = carrito.reduce((acc, el) => acc + el.precio, 0);
 
@@ -39,3 +51,14 @@
 };
 
 verCarrito.addEventListener("click", pintarCarrito);
+
+// ELIMINAR PRODUCTO
+
+const eliminarProducto = () => {
+    const foundId = carrito.find((element) => element.id);
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== foundId;
+    });
+
+    pintarCarrito();
+};

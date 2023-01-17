@@ -26,10 +26,12 @@ productos.forEach((product) => {
 
   content.append(comprar);
 
+// ACUMULAR CANTIDAD DE PRODUCTO
+
     comprar.addEventListener("click", () => {
 
         const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
-        if (repeat) {
+        if (repeat === true) {
             carrito.map((prod) => {
                 if(prod.id === product.id){
                     prod.cantidad++;

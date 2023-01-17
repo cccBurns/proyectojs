@@ -1,3 +1,5 @@
+    // CARRITO
+    
     const pintar_carrito = ()  => {
         modal_container.innerHTML = "";
         modal_container.style.display = "flex";
@@ -46,10 +48,10 @@
 
         const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
-        const totalBuying = document.createElement("div");
-        totalBuying.className = "total-content";
-        totalBuying.innerHTML = `total a pagar: ${total} $`;
-        modal_container.append(totalBuying);
+        const total_buying = document.createElement("div");
+        total_buying.className = "total-content";
+        total_buying.innerHTML = `total a pagar: ${total} $`;
+        modal_container.append(total_buying);
 };
 
 ver_carrito.addEventListener("click", pintar_carrito);

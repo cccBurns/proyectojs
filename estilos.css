@@ -38,7 +38,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../proyecto\ js/multimedia/video.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../proyecto\ js/multimedia/video.jpg);
 }
 
 .banner-container {
@@ -68,8 +68,8 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .card {
@@ -78,6 +78,7 @@ body {
     margin: auto;
     text-align: center;
     font-family: Arial;
+    margin: 10px;
 }
 
 .card > img {
@@ -146,13 +147,14 @@ body {
     cursor: pointer;
 }
 
-.modal-container > .modal-container {
+.modal-container > .modal-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 70%;
     margin: 10px;
+    font-size: 20px;
     
 }
 
@@ -171,3 +173,42 @@ body {
 .delete-product {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 750px) {
+    .modal-container {
+      width: 100%;
+      margin: 0;
+      min-height: 88vh;
+    }
+  
+    .modal-container > .modal-content {
+      justify-content: space-between;
+      width: 100%;
+      margin: 2px;
+    }
+  
+    .modal-container > div > img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  .cantidad-carrito {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+  }
+  
+  .sumar {
+    cursor: pointer;
+  }
+  
+  .restar {
+    cursor: pointer;
+  }

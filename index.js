@@ -2,6 +2,8 @@
 const shop_content = document.getElementById("shop_content");
 const ver_carrito = document.getElementById("ver_carrito");
 const modal_container = document.getElementById("modal-container");
+const showAlert = document.getElementById("showAlert");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 let carrito = [];
 

@@ -27,22 +27,48 @@
                 <img src="${product.img}">
                 <h3>${product.nombre}</h3>
                 <p>${product.precio} $</p>
-                <p>Cantidad: ${product.cantidad}</p>
+                <span class="restar"> - </span>
+                <p>${product.cantidad}</p>
+                <span class="sumar"> + </span>
                 <p>Total: ${product.cantidad * product.precio}</p>
+                <span class="delete-product"> ❌ </span>
                 `;
 
                 modal_container.append(carrito_content);
 
+                let restar = carrito_content.querySelector(".restar");
+
+                restar.addEventListener("click", () => {
+                    if (product.cantidad !== 1) {
+                        product.cantidad--;
+                    }
+                    save_local();
+                    pintar_carrito();
+                });
+
+                let sumar = carrito_content.querySelector(".sumar");
+                sumar.addEventListener("click", () => {
+                    product.cantidad++;
+                    save_local();
+                    pintar_carrito();
+                });
+
 // BOTON ELEMINR PRODUCTOS
 
-            let eliminar = document.createElement("span");
+            let eliminar = carrito_content.querySelector(".delete-product");
+
+            eliminar.addEventListener("click", ()=> {
+                eliminar_producto(product.id);
+            }):
+
+            /* let eliminar = document.createElement("span");
             eliminar.innerText = "❌";
             eliminar.className = "delete-product";
             carrito_content.append(eliminar);
 
-            eliminar.addEventListener("click", eliminar_producto);
+            eliminar.addEventListener("click", eliminar_producto); */
 
-        });
+       /*  }); */
 
 
 
@@ -58,11 +84,28 @@ ver_carrito.addEventListener("click", pintar_carrito);
 
 // ELIMINAR PRODUCTO
 
-const eliminar_producto = () => {
-    const foundId = carrito.find((element) => element.id);
+const eliminar_producto = (id) => {
+    const foundId = carrito.find((element) => element.id === id);
+
+    console.log(foundId);
+
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
     });
 
+    carrito_counter();
+    save_local();
     pintar_carrito();
 };
+
+const carrito_counter = () => {
+    cantidadCarrito.style.display = "block";
+  
+    const carritoLength = carrito.length;
+  
+    localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+  
+    cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+  };
+  
+  carrito_counter();

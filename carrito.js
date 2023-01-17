@@ -1,27 +1,27 @@
-    const pintarCarrito = ()  => {
-        modalContainer.innerHTML = "";
-        modalContainer.style.display = "flex";
-        const modalHeader = document.createElement("div");
-        modalHeader.className = "modal-header";
-        modalHeader.innerHTML = `
+    const pintar_carrito = ()  => {
+        modal_container.innerHTML = "";
+        modal_container.style.display = "flex";
+        const modal_header = document.createElement("div");
+        modal_header.className = "modal-header";
+        modal_header.innerHTML = `
         <h1 class="modal-header-title">Carrito.</h1>
         `;
-        modalContainer.append(modalHeader);
+        modal_container.append(modal_header);
 
         const modalbutton = document.createElement("h1");
         modalbutton.innerText = "x";
         modalbutton.className = "modal-header-button";
 
         modalbutton.addEventListener("click", () => {
-            modalContainer.style.display = "none";
+            modal_container.style.display = "none";
         });
 
-        modalHeader.append(modalbutton);
+        modal_header.append(modalbutton);
 
         carrito.forEach((product) => {
-            let carritoContent = document.createElement("div");
-            carritoContent.className = "modal-content";
-            carritoContent.innerHTML = `
+            let carrito_content = document.createElement("div");
+            carrito_content.className = "modal-content";
+            carrito_content.innerHTML = `
                 <img src="${product.img}">
                 <h3>${product.nombre}</h3>
                 <p>${product.precio} $</p>
@@ -29,16 +29,16 @@
                 <p>Total: ${product.cantidad * product.precio}</p>
                 `;
 
-            modalContainer.append(carritoContent);
+                modal_container.append(carrito_content);
 
 // BOTON ELEMINR PRODUCTOS
 
             let eliminar = document.createElement("span");
             eliminar.innerText = "❌";
             eliminar.className = "delete-product";
-            carritoContent.append(eliminar);
+            carrito_content.append(eliminar);
 
-            eliminar.addEventListener("click", eliminarProducto);
+            eliminar.addEventListener("click", eliminar_producto);
 
         });
 
@@ -49,18 +49,18 @@
         const totalBuying = document.createElement("div");
         totalBuying.className = "total-content";
         totalBuying.innerHTML = `total a pagar: ${total} $`;
-        modalContainer.append(totalBuying);
+        modal_container.append(totalBuying);
 };
 
-verCarrito.addEventListener("click", pintarCarrito);
+ver_carrito.addEventListener("click", pintar_carrito);
 
 // ELIMINAR PRODUCTO
 
-const eliminarProducto = () => {
+const eliminar_producto = () => {
     const foundId = carrito.find((element) => element.id);
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
     });
 
-    pintarCarrito();
+    pintar_carrito();
 };

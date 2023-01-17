@@ -1,7 +1,7 @@
 
-const shopContent = document.getElementById("shopContent");
-const verCarrito = document.getElementById("verCarrito");
-const modalContainer = document.getElementById("modal-container");
+const shop_content = document.getElementById("shop_content");
+const ver_carrito = document.getElementById("ver_carrito");
+const modal_container = document.getElementById("modal-container");
 
 let carrito = [];
 
@@ -16,7 +16,7 @@ productos.forEach((product) => {
          <p class="price">${product.precio} $</p>
           `;
 
-    shopContent.append(content);
+        shop_content.append(content);
 
     // BOTON COMPRAR
 

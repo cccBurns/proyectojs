@@ -61,9 +61,7 @@
                 eliminar_producto(product.id);
             });
                        
-         });
-
-
+        });
 
         const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
@@ -94,11 +92,11 @@ const eliminar_producto = (id) => {
 const carrito_counter = () => {
     cantidad_carrito.style.display = "block";
   
-    const carrito_length = carrito.length;
+    const carritoLength = carrito.length;
   
-    local_storage.setItem("carrito_length", JSON.stringify(carrito_length));
+    localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
   
-    cantidad_carrito.innerText = JSON.parse(local_storage.getItem("carrito_length"));
+    cantidad_carrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
   };
   
   carrito_counter();

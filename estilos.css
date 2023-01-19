@@ -170,10 +170,6 @@ body {
     padding-top: 20px;
 }
 
-.delete-product {
-    cursor: pointer;
-}
-
 @media only screen and (max-width: 750px) {
     .modal-container {
       width: 100%;
@@ -192,6 +188,10 @@ body {
       width: 80px;
     }
   }
+
+  .delete-product {
+    cursor: pointer;
+}
 
   .cantidad-carrito {
     background-color: red;

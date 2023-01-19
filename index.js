@@ -58,7 +58,7 @@ productos.forEach((product) => {
 
 //SET ITEM
 
-const saveLocal = () => {
+const save_local = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 

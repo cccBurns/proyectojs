@@ -6,8 +6,8 @@
         const modal_header = document.createElement("div");
         modal_header.className = "modal-header";
         modal_header.innerHTML = `
-        <h1 class="modal-header-title">Carrito.</h1>
-        `;
+            <h1 class="modal-header-title">Carrito.</h1>`;
+
         modal_container.append(modal_header);
 
         const modalbutton = document.createElement("h1");
@@ -53,22 +53,15 @@
                     pintar_carrito();
                 });
 
-// BOTON ELEMINR PRODUCTOS
+            // BOTON ELEMINR PRODUCTOS
 
             let eliminar = carrito_content.querySelector(".delete-product");
 
             eliminar.addEventListener("click", ()=> {
                 eliminar_producto(product.id);
-            }):
-
-            /* let eliminar = document.createElement("span");
-            eliminar.innerText = "❌";
-            eliminar.className = "delete-product";
-            carrito_content.append(eliminar);
-
-            eliminar.addEventListener("click", eliminar_producto); */
-
-       /*  }); */
+            });
+                       
+         });
 
 
 
@@ -76,7 +69,7 @@
 
         const total_buying = document.createElement("div");
         total_buying.className = "total-content";
-        total_buying.innerHTML = `total a pagar: ${total} $`;
+        total_buying.innerHTML = `Total a pagar: ${total} $`;
         modal_container.append(total_buying);
 };
 
@@ -99,13 +92,13 @@ const eliminar_producto = (id) => {
 };
 
 const carrito_counter = () => {
-    cantidadCarrito.style.display = "block";
+    cantidad_carrito.style.display = "block";
   
-    const carritoLength = carrito.length;
+    const carrito_length = carrito.length;
   
-    localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+    local_storage.setItem("carrito_length", JSON.stringify(carrito_length));
   
-    cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+    cantidad_carrito.innerText = JSON.parse(local_storage.getItem("carrito_length"));
   };
   
   carrito_counter();

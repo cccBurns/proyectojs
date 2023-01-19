@@ -2,8 +2,8 @@
 const shop_content = document.getElementById("shop_content");
 const ver_carrito = document.getElementById("ver_carrito");
 const modal_container = document.getElementById("modal-container");
-const showAlert = document.getElementById("showAlert");
-const cantidadCarrito = document.getElementById("cantidadCarrito");
+const show_alert = document.getElementById("show_alert");
+const cantidad_carrito = document.getElementById("cantidad_carrito");
 
 let carrito = [];
 
@@ -47,10 +47,20 @@ productos.forEach((product) => {
             precio: product.precio,
             cantidad: product.cantidad,
             });
-        }
-        console.log(carrito);
+        
+            console.log(carrito);
+            console.log(carrito.length);
+            carrito_counter();
+            save_local();
+          }
     });
 });
+
+//SET ITEM
+
+const saveLocal = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+};
 
 
 

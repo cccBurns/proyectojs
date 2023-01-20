@@ -1,16 +1,16 @@
-    // CARRITO
+// CARRITO
     
     const pintar_carrito = ()  => {
         modal_container.innerHTML = "";
         modal_container.style.display = "flex";
-        const modal_header = document.createElement("div");
+    const modal_header = document.createElement("div");
         modal_header.className = "modal-header";
         modal_header.innerHTML = `
-            <h1 class="modal-header-title">Carrito.</h1>`;
-
+            <h1 class="modal-header-title">Carrito.</h1>
+            `;
         modal_container.append(modal_header);
 
-        const modalbutton = document.createElement("h1");
+    const modalbutton = document.createElement("h1");
         modalbutton.innerText = "x";
         modalbutton.className = "modal-header-button";
 
@@ -20,83 +20,83 @@
 
         modal_header.append(modalbutton);
 
-        carrito.forEach((product) => {
-            let carrito_content = document.createElement("div");
-            carrito_content.className = "modal-content";
-            carrito_content.innerHTML = `
-                <img src="${product.img}">
-                <h3>${product.nombre}</h3>
-                <p>${product.precio} $</p>
-                <span class="restar"> - </span>
-                <p>${product.cantidad}</p>
-                <span class="sumar"> + </span>
-                <p>Total: ${product.cantidad * product.precio}</p>
-                <span class="delete-product"> ❌ </span>
-                `;
+    carrito.forEach((product) => {
+        let carrito_content = document.createElement("div");
+        carrito_content.className = "modal-content";
+        carrito_content.innerHTML = `
+            <img src="${product.img}">
+            <h3>${product.nombre}</h3>
+            <p>${product.precio} $</p>
+            <span class="restar"> - </span>
+            <p>${product.cantidad}</p>
+            <span class="sumar"> + </span>
+            <p>Total: ${product.cantidad * product.precio}</p>
+            <span class="delete-product"> ❌ </span>
+            `;
 
-                modal_container.append(carrito_content);
+    modal_container.append(carrito_content);
 
-                let restar = carrito_content.querySelector(".restar");
+    let restar = carrito_content.querySelector(".restar");
 
-                restar.addEventListener("click", () => {
-                    if (product.cantidad !== 1) {
-                        product.cantidad--;
-                    }
-                    save_local();
-                    pintar_carrito();
-                });
+        restar.addEventListener("click", () => {
+            if (product.cantidad !== 1) {
+                product.cantidad--;
+            }
+            save_local();
+            pintar_carrito();
+        });
 
-                let sumar = carrito_content.querySelector(".sumar");
-                sumar.addEventListener("click", () => {
-                    product.cantidad++;
-                    save_local();
-                    pintar_carrito();
-                });
+    let sumar = carrito_content.querySelector(".sumar");
+        sumar.addEventListener("click", () => {
+                product.cantidad++;
+            save_local();
+            pintar_carrito();
+        });
 
-            // BOTON ELEMINR PRODUCTOS
+// BOTON ELEMINR PRODUCTOS
 
-            let eliminar = carrito_content.querySelector(".delete-product");
+    let eliminar = carrito_content.querySelector(".delete-product");
 
-            eliminar.addEventListener("click", ()=> {
-                eliminar_producto(product.id);
-            });
+        eliminar.addEventListener("click", ()=> {
+            eliminar_producto(product.id);
+        });
                        
         });
 
-        const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
-        const total_buying = document.createElement("div");
+    const total_buying = document.createElement("div");
         total_buying.className = "total-content";
         total_buying.innerHTML = `Total a pagar: ${total} $`;
         modal_container.append(total_buying);
 };
 
-ver_carrito.addEventListener("click", pintar_carrito);
+    ver_carrito.addEventListener("click", pintar_carrito);
 
 // ELIMINAR PRODUCTO
 
-const eliminar_producto = (id) => {
+    const eliminar_producto = (id) => {
     const foundId = carrito.find((element) => element.id === id);
 
-    console.log(foundId);
+        console.log(foundId);
 
-    carrito = carrito.filter((carritoId) => {
+        carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
     });
 
-    carrito_counter();
-    save_local();
-    pintar_carrito();
+            carrito_counter();
+            save_local();
+            pintar_carrito();
 };
 
 const carrito_counter = () => {
     cantidad_carrito.style.display = "block";
   
-    const carritoLength = carrito.length;
+const carritoLength = carrito.length;
   
     localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
   
     cantidad_carrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
   };
   
-  carrito_counter();
+            carrito_counter();

@@ -5,7 +5,7 @@ const modal_container = document.getElementById("modal-container");
 const show_alert = document.getElementById("show_alert");
 const cantidad_carrito = document.getElementById("cantidad_carrito");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //RECORRIDO DEL PRODUCTO
 
@@ -32,11 +32,12 @@ productos.forEach((product) => {
 
     comprar.addEventListener("click", () => {
 
-        const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
+        const repeat = carrito.some((repeat_product) => repeat_product.id === product.id);
+
         if (repeat === true) {
             carrito.map((prod) => {
                 if(prod.id === product.id){
-                    prod.cantidad++;
+                   prod.cantidad++;
                 }
             });
         } else {

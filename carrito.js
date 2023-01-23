@@ -89,6 +89,8 @@
             pintar_carrito();
 };
 
+//CONTADOR DE PRODUCTOS EN CARRITO
+
 const carrito_counter = () => {
     cantidad_carrito.style.display = "block";
   
@@ -99,4 +101,4 @@ const carritoLength = carrito.length;
     cantidad_carrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
   };
   
-            carrito_counter();
+carrito_counter();

@@ -1,4 +1,3 @@
-
 // LISTA DE PRODUCTOS
 
 const productos = [

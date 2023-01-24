@@ -40,7 +40,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../proyecto\ js/multimedia/40903.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://www.digitaltrends.com/wp-content/uploads/2022/10/rtx-4090-review-featured.jpg?fit=1500%2C843&p=1);
 }
 
 .banner-container {

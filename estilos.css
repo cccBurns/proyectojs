@@ -175,6 +175,15 @@ body {
     padding-top: 20px;
 }
 
+/* .estilo_ajax_fetch {
+    color: white;
+
+}
+
+.estilo_ajax_fetch h3{
+    color: white;
+}
+ */
 @media only screen and (max-width: 750px) {
     .modal-container {
       width: 100%;

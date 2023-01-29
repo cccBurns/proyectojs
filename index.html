@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="estilos.css">
     <title>Graphic Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.css" integrity="sha512-JzSVRb7c802/njMbV97pjo1wuJAE/6v9CvthGTDxiaZij/TFpPQmQPTcdXyUVucsvLtJBT6YwRb5LhVxX3pQHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-<!--- NAV BAR --->  
+<!--- NAV BAR -->  
 
     <div class="nav-container">
         <nav class="navbar">
+            
             <h1 class="navbar-logo">Graphic Shop</h1>
+            <p class="estilo_ajax_fetch" style="color: white;"> Valor del dolar : </p> <h3 id="valor_dolar" style="color: white;" > </h3>
+            <p class="estilo_ajax_fetch" style="color: white;"> Usuario logueado : </p> <h3 id="nombre_pokemon" style="color: white;" > </h3>
             <h1 class="ver-carrito" id="ver_carrito">🛒<span id="cantidad_carrito" class="cantidad-carrito"></span></h1>
         </nav>
     </div>
 
-<!--- BANNER --->  
+<!--- BANNER -->  
 
     <div class="banner">
         <div class="banner-container">
@@ -27,14 +31,15 @@
         </div>
     </div>
 
-<!--- SHOP CONTENT --->
+<!--- SHOP CONTENT -->
 
     <div id="shop_content" class="shop-content"></div>
 
-<!--- MODAL CONTENT --->
+<!--- MODAL CONTENT -->
 
     <div id="modal-container" class="modal-container"></div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.min.js" integrity="sha512-vCI1Ba/Ob39YYPiWruLs4uHSA3QzxgHBcJNfFMRMJr832nT/2FBrwmMGQMwlD6Z/rAIIwZFX8vJJWDj7odXMaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="products.js"></script>    
     <script src="index.js"></script>
     <script src="carrito.js"></script>
